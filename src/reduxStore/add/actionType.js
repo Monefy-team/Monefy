@@ -1,0 +1,1 @@
+export const SET_PAGE_COMPONENT= 'SET_PAGE_COMPONENT';

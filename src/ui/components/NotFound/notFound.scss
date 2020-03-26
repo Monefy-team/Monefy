@@ -1,0 +1,14 @@
+@import "../../styles/colors.scss";
+@import '../../styles/fonts.scss';
+@import '../../styles/reset.scss';
+
+.notFound-wrapper {
+  img {
+	  display: block;
+	  width: 330px;
+	  height: 230px;
+	  margin: 0 auto;
+	  padding-top: 50%;
+  }
+}
+

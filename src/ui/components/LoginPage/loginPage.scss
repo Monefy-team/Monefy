@@ -1,0 +1,75 @@
+@import 'src/ui/styles/reset';
+@import "src/ui/styles/fonts";
+@import "src/ui/styles/colors.scss";
+@mixin footer-links {
+    margin: 10px 5px;
+    border: 2px solid #000;
+    border-left: none;
+    border-bottom: none;
+    border-top: none;
+    line-height: 15px;
+    padding-right: 5px;
+    text-decoration: underline;
+    font-family: 'Roboto-Regular';
+}
+@mixin btn {
+    width: 80%;
+    height: 35px;
+    margin: 0 auto;
+    color: $white;
+    font-family: 'Roboto-Regular';
+    font-size: 14px;
+    text-align: center;
+    line-height: 35px;
+    -webkit-box-shadow: -1px -3px 24px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px -3px 24px -9px rgba(0,0,0,0.75);
+    box-shadow: -1px -3px 24px -9px rgba(0,0,0,0.75);
+}
+
+.login_wrapper {
+    .logo-container {
+        margin: 130px auto;
+        img {
+            display: block;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto;
+        }
+        p{
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: 'Roboto-Bold', sans-serif;
+            letter-spacing: 1px;
+        }
+    }
+    .btn-block{
+        .log-in{
+            @include btn;
+            background-color: $main-gray;
+            margin-bottom: 10px;
+        }
+        .sign-up {
+            @include btn;
+            background-color: $main-green;
+            margin-bottom: 30px;
+        }
+    }
+    .footer-wrapper{
+        display: flex;
+        justify-content: center;
+        .terms{
+            @include footer-links;
+        }
+         .privacy-policy {
+            @include footer-links;
+         }
+         .contact-us {
+            margin: 10px 5px;
+            line-height: 15px;
+            padding-right: 5px;
+            text-decoration: underline;
+            font-family: 'Roboto-Regular';
+         }
+    }
+}

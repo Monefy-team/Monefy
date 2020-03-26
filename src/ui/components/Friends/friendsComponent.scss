@@ -1,0 +1,119 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/reset.scss';
+
+.friends-wrapper {
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        img {
+            width: 35px;
+            height: 35px;
+        }
+        .button {
+            width: 120px;
+            height: 35px;
+            font-size: 16px;
+            font-family: 'Roboto-Regular', serif;
+            border: none;
+            background: #fff;
+        }
+    }
+    .friends{
+        font-family: 'Roboto-Regular', serif;
+        font-size: 26px;
+        padding: 20px 10px;
+    }
+    .total-balance {
+        background: $main-gray;
+        display: flex;
+        // justify-content: space-evenly;
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 15px;
+        .photo-block {
+            img {
+                padding: 10px 20px;
+                width: 75px;
+                height: 75px;
+            }
+        }
+        .balance-block{
+            display: flex;
+            flex-direction: column;
+            // line-height: ;
+            .label-paragraph{
+                color: $white;
+                font-family: 'Roboto-Regular', serif;
+                font-size: 19px;
+                padding-top: 25px;
+                padding-bottom: 8px;
+            }
+            .you-are-owed {
+                color: $main-orange;
+                font-size: 18px;
+                letter-spacing: 0.5px;
+            }
+            .you-owe {
+                color: $main-green;
+                font-size: 18px;
+                letter-spacing: 0.5px;
+            }
+        }
+    }
+        .item-wrapper {
+            padding: 20px 0;
+            width: 95%;
+            height: 60px;
+            margin: auto;
+            display: flex;
+            // border-bottom: 1px solid $main-gray;
+            // justify-content: space-between;
+            img {
+                width: 45px;
+                height: 45px;
+                padding: 7.5px 10px;
+            }
+            .name {
+                font-size: 20px;
+                font-family: 'Roboto-Regular', serif;
+                line-height: 60px;
+            }
+            .oves-wrapper {
+                position: absolute;
+                padding-top: 13px;
+                right: 22px;
+                .oves {
+                    font-family: 'Roboto-Regular', serif;
+                    font-size: 16px;
+                    color: $main-green;
+                    text-align: center;
+                    padding-bottom: 3px;
+                }
+                .summa {
+                    font-family: 'Roboto-Regular', serif;
+                    font-size: 18px;
+                    color: $main-green;
+                }
+            }
+            .arrow {
+                position: absolute;
+                right: 10px;
+                margin-top: 25px;
+                width: 8px;
+                height: 8px;
+                border: 2px solid #c3c3c3;
+                border-bottom: none;
+                border-right: none;
+                transform: rotate(134deg);
+            }
+        }
+        //  .line {
+        //     content: "";
+        //     display: block;
+        //     height: 1px;
+        //     width: 100%;
+        //     background: #e3e3e3;
+        // }
+    }

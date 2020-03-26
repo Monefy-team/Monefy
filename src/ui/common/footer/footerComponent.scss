@@ -1,0 +1,41 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/reset.scss';
+
+.footer {
+    background-color: $main-gray;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 5px;
+
+    .navLink {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        width: 80px;
+        color: $main-green;
+        font-size: 16px;
+        text-align: center;
+        font-family: 'Roboto-Medium';
+        span {
+            font-family: 'Roboto-Regular';
+        }
+    }
+    
+    .is-active {
+        border-bottom: 5px solid $main-green;
+    }
+    
+    .imgbar {
+        width: auto;
+        height: 40px;
+        margin: 6px auto;
+    }
+    .add-button {
+        color: $main-green;
+    }
+}
