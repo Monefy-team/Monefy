@@ -1,7 +1,8 @@
 import { SET_PAGE_COMPONENT  } from './actionType';
 const initialState = {
-   name:'',
-   value:'',
+    name:'',
+    value:'',
+    data: [{}],
 };
 
 export function addPageReducer(state = initialState, action) {
@@ -11,6 +12,7 @@ export function addPageReducer(state = initialState, action) {
                 ...state,
                 name: action.name,
                 value: action.value,
+                data: action.data,
             };
         default:
             return state;
