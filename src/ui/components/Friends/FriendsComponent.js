@@ -1,23 +1,22 @@
 import React from "react";
 import search from "./png/search.png";
 import "./friendsComponent.scss";
-import {object, string} from "prop-types";
-import ItemAdd from "../itemAdd";
+import {array, object, string} from "prop-types";
 import profile from "./png/profile.png";
 
 const propTypes = {
     randomDataObject: object,
     name: string,
-    value: string
+    value: string,
+    data: array,
 };
 
-// eslint-disable-next-line react/prop-types
-const FriendComponent = ({onClickHandler, addItem, elements, name, value}) => {
+const FriendComponent = ({onClickHandler, elements,}) => {
     return (
         <div className="friends-wrapper">
             <header>
                 <div className="header-container">
-                    <img src={search} alt="kartinka"/>
+                    <img src={search} alt="img"/>
                     <button className="button" onClick={onClickHandler}>
                         Add friends
                     </button>
@@ -27,7 +26,7 @@ const FriendComponent = ({onClickHandler, addItem, elements, name, value}) => {
             <section>
                 <div className="total-balance">
                     <div className="photo-block">
-                        <img src={profile} alt="kartinachka"/>
+                        <img src={profile} alt="img"/>
                     </div>
                     <div className="balance-block">
                         <p className="label-paragraph">Total balance</p>
@@ -37,9 +36,6 @@ const FriendComponent = ({onClickHandler, addItem, elements, name, value}) => {
                 </div>
             </section>
             <section>{elements}</section>
-            <ItemAdd addItem={addItem}/>
-            <label > {name} </label>
-            <label > {value} </label>
         </div>
     );
 };
