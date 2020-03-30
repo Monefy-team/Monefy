@@ -1,50 +1,31 @@
 import React, {Component} from "react";
 import FriendComponent from "./FriendsComponent";
-import {string, object} from "prop-types";
+import {string, object, array} from "prop-types";
 import profile from "./png/profile.png";
 import {connect} from "react-redux";
 
 const propTypes = {
     randomDataObject: object,
     name: string,
-    value: string
+    value: string,
+    data: array,
 };
 
 class FriendContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // name: "",
-            // value: "",
             addData: [{name: "Vlad Andree", value: 30.9, id: 1}]
         };
         this.onClickHandler = this.onClickHandler.bind(this);
-        this.addItem = this.addItem.bind(this);
     }
-
-    maxId = 100;
 
     onClickHandler = () => {
         console.log(this.state.value);
     };
 
-    addItem = () => {
-        const newItem = {
-            name: this.props.nameAddPage,
-            value: this.props.valueAddPage,
-            id: this.maxId++
-        };
-
-        this.setState(({addData}) => {
-            const newArr = [...addData, newItem];
-            return {
-                addData: newArr
-            };
-        });
-    };
-
     render() {
-        const elements = this.state.addData.map(item => {
+        const elements = this.props.valueData.map(item => {
             return (
                 <div className="item-wrapper" key={item.id}>
                     <img src={profile} className="profile-img" alt="profileImg"/>
@@ -61,7 +42,6 @@ class FriendContainer extends Component {
         return (
             <FriendComponent
                 onClickHandler={this.onClickHandler}
-                addItem={this.addItem}
                 elements={elements}
                 name={this.props.nameAddPage}
                 value={this.props.valueAddPage}
@@ -74,6 +54,7 @@ const mapStateToProps = state => {
     return {
         nameAddPage: state.addPageReducer.name,
         valueAddPage: state.addPageReducer.value,
+        valueData: state.addPageReducer.data,
     };
 };
 
