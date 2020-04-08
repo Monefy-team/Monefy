@@ -15,7 +15,9 @@ class FriendContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            addData: [{name: "Vlad Andree", value: 30.9, id: 1}]
+            // тут стейта не треба через то шо ми маємо стейт
+            // в адд компоненті а у цьому компоненті ми його отрисовуєм
+            // беручи стейт через пропс
         };
         this.onClickHandler = this.onClickHandler.bind(this);
     }
@@ -26,25 +28,27 @@ class FriendContainer extends Component {
 
     render() {
         const elements = this.props.valueData.map(item => {
-            return (
-                <div className="item-wrapper" key={item.id}>
-                    <img src={profile} className="profile-img" alt="profileImg"/>
-                    <p className="name">{item.name}</p>
-                    <div className="oves-wrapper">
-                        <p className="oves">oves you</p>
-                        <p className="summa">{item.value} USD</p>
+            if (item.name === undefined || item.value === undefined ) {
+                return null;
+            } else {
+                return (
+                    <div className="item-wrapper" key={item.id}>
+                        <img src={profile} className="profile-img" alt="profileImg"/>
+                        <p className="name">{item.name}</p>
+                        <div className="oves-wrapper">
+                            <p className="oves">oves you</p>
+                            <p className="summa">{item.value} USD</p>
+                        </div>
+                        <div className="arrow">
+                        </div>
                     </div>
-                    <div className="arrow">
-                    </div>
-                </div>
-            );
+                );
+            }
         });
         return (
             <FriendComponent
                 onClickHandler={this.onClickHandler}
                 elements={elements}
-                name={this.props.nameAddPage}
-                value={this.props.valueAddPage}
             />
         );
     }

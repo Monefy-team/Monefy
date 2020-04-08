@@ -4,7 +4,7 @@ import { push } from "connected-react-router";
 import { func, string } from "prop-types";
 import { connect } from "react-redux";
 import {addPageComponent} from '../../../reduxStore/add/actions'
-import {addPageReducer} from "../../../reduxStore/add/reducer";
+// import {addPageReducer} from "../../../reduxStore/add/reducer";
 
 const propTypes = {
   push: func,
@@ -23,7 +23,7 @@ class AddPAgeContainer extends Component {
     this.state = {
       name: "",
       value: "",
-      addData: [{name: "Vlad Andree", value: 30.9, id: 1}]
+      addData: [{}]
     };
     this.CloseClick = this.CloseClick.bind(this);
     this.SaveClick = this.SaveClick.bind(this);
@@ -51,6 +51,24 @@ class AddPAgeContainer extends Component {
     this.setState({ value: event.target.value });
   };
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("-було надіслано: " + this.state.name);
+    console.log("-було надіслано: " + this.state.value);
+    console.log(this.state);
+    const { push, addPageComponent } = this.props;
+    if ( this.state.name.length <= 0 || this.state.value.length <= 0) {
+      return null
+    } else {
+      addPageComponent(
+          this.state.name,
+          this.state.value,
+          this.state.addData,
+      );
+    push("/friends");
+    }
+  };
+
   addItem = () => {
     const newItem = {
       name: this.state.name,
@@ -64,21 +82,6 @@ class AddPAgeContainer extends Component {
         addData: newArr
       };
     });
-  };
-
-  handleSubmit = () => {
-    const { push, addPageComponent } = this.props;
-    addPageComponent(
-        this.state.name,
-        this.state.value,
-        this.state.addData,
-    );
-    // event.preventDefault();
-    // // this.props.handleSubmit(this.state.name, this.state.value);
-    console.log("-було надіслано: " + this.state.name);
-    console.log("-було надіслано: " + this.state.value);
-    console.log("-було надіслано: " + this.state.addData);
-    push("/friends");
   };
 
   render() {
