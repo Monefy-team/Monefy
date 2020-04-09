@@ -4,19 +4,23 @@
 
 .friends-wrapper {
     .header-container {
+        background: $main-orange;
         display: flex;
         justify-content: space-between;
+        height: 45px;
         img {
+            padding-left: 10px;
+            padding-top: 3px;
             width: 35px;
             height: 35px;
         }
         .button {
-            width: 120px;
-            height: 35px;
-            font-size: 16px;
+            width: auto;
+            height: 45px;
+            font-size: 20px;
             font-family: 'Roboto-Regular', serif;
             border: none;
-            background: #fff;
+            background: $main-orange;
         }
     }
     .friends{
@@ -51,7 +55,7 @@
                 padding-bottom: 8px;
             }
             .you-are-owed {
-                color: $main-orange;
+                color: $main-red;
                 font-size: 18px;
                 letter-spacing: 0.5px;
             }

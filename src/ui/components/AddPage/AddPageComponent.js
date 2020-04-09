@@ -2,8 +2,9 @@ import React from "react";
 import "./addPageComponent.scss";
 import { func } from "prop-types";
 import close from "./png/close.png";
+import price from './png/price.svg'
 import list from "./png/list.png";
-import grn from "./png/grn.png";
+import monefy from './png/monefy.png';
 
 const propTypes = {
   AddItem: func,
@@ -33,26 +34,30 @@ const AddPageComponent = ({
           <p className="save">Save</p>
         </button>
       </div>
-      <header>
-        <div className="group-name">
-          <p>With you and: All of "Daun Hata" </p>
-        </div>
-      </header>
+
+      <img alt='wof' src={monefy} className='form-logo-img'/>
+
       <section>
         <div className="wrapper-container">
           <form onSubmit={handleSubmit}>
-            <label>
-              <img className="list-img" src={list} alt="kartinkalist" />
-              <input type="text" onChange={handleChangeName} />
-            </label>
-            <label>
-              <img className="grn-img" src={grn} alt="kartinkalist" />
-              <input type="number" onChange={handleChangeValue} />
-            </label>
+            <div className='form-container'>
+              <div className='name-container'>
+                <img src={list} className='name-img' alt='wof'/>
+                <input className='name-input' type="text"
+                     placeholder='Enter name' onChange={handleChangeName}
+                 />
+              </div>
+              <div className='price-container'>
+                <img src={price} className='price-img' alt='wof'/>
+                <input className='value-input' type="number"
+                       placeholder='Enter price' onChange={handleChangeValue}
+                       inputMode='numeric' />
+              </div>
             <button
                 className="submit-btn" onClick={addItem}>
               Send item
             </button>
+            </div>
           </form>
         </div>
       </section>

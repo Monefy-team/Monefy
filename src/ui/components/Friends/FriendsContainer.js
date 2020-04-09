@@ -25,12 +25,18 @@ class FriendContainer extends Component {
     onClickHandler = () => {
         console.log(this.state.value);
     };
-
     render() {
         const elements = this.props.valueData.map(item => {
-            if (item.name === undefined || item.value === undefined ) {
+            if (item.name === undefined || item.value === undefined) {
+                // для того щоб стейт який з початку ( він пустий )
+                //  не відображався
                 return null;
-            } else {
+            } else if (item.name === '' || item.value === '') {
+                // якщо один з інтпутів пустий
+                //  на компонент Friends не відправляється нічого
+                console.log('item.name or item.value = пустая строка');
+                return null;
+        } else {
                 return (
                     <div className="item-wrapper" key={item.id}>
                         <img src={profile} className="profile-img" alt="profileImg"/>

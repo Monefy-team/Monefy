@@ -3,7 +3,7 @@
 @import '../../styles/reset.scss';
 
 .footer {
-    background-color: $main-gray;
+    background-color: $main-orange;
     height: auto;
     position: absolute;
     bottom: 0;
@@ -17,17 +17,17 @@
         flex-direction: column;
         text-decoration: none;
         width: 80px;
-        color: $main-green;
+        color: $main-brown;
         font-size: 16px;
         text-align: center;
-        font-family: 'Roboto-Medium';
+        font-family: 'Roboto-Medium', serif;
         span {
-            font-family: 'Roboto-Regular';
+            font-family: 'Roboto-Regular', serif;
         }
     }
     
     .is-active {
-        border-bottom: 5px solid $main-green;
+        border-bottom: 5px solid $main-brown;
     }
     
     .imgbar {
@@ -36,6 +36,6 @@
         margin: 6px auto;
     }
     .add-button {
-        color: $main-green;
+        color: $main-brown;
     }
 }
