@@ -1,1 +1,1 @@
-# Splitwise-prototype
+# Monefy-prototype
